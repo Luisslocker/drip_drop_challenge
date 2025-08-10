@@ -2,38 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Drip Drop Challenge – Luis’s Locker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>Drip Drop Challenge – Luis’s Locker Edition</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <div id="game-wrapper">
-    <header>
-      <h1>Drip Drop Challenge</h1>
-      <div class="hud">
-        <div>Score: <span id="score">0</span></div>
-        <div>Lives: <span id="lives">3</span></div>
-        <div>Best: <span id="best">0</span></div>
-      </div>
-    </header>
 
-    <canvas id="game" width="480" height="720" aria-label="Drip Drop Challenge Game Canvas"></canvas>
-
-    <section id="controls">
-      <button id="btn-left" aria-label="Move Left">◀</button>
-      <button id="btn-right" aria-label="Move Right">▶</button>
-      <button id="btn-pause" aria-label="Pause/Resume">⏯</button>
-    </section>
-
-    <footer>
-      <div id="stamp">
-        <!-- LL stamp area; replace with your logo image if desired -->
-        <span class="ll">LL</span> SCOREBOARD
-      </div>
-      <div class="embed-hint">Tip: Host on GitHub Pages and embed with an &lt;iframe&gt; in Shopify.</div>
-    </footer>
+  <!-- Title Menu -->
+  <div id="menu">
+    <img src="assets/logo.png" alt="Luis's Locker Logo" class="logo">
+    <h1>Drip Drop Challenge</h1>
+    <button id="start-btn">Play</button>
+    <button id="how-btn">How to Play</button>
+    <div id="how-panel" hidden>
+      <p>Catch the <strong>alien-octopus drip</strong> to score points.</p>
+      <p>Avoid the hazard blocks — unless you’re powered up!</p>
+      <p>Use corner buttons or arrow keys to move.</p>
+    </div>
   </div>
 
+  <!-- Game HUD -->
+  <div id="hud" hidden>
+    <div class="scoreboard">
+      <span>Score: <span id="score">0</span></span>
+      <span>Lives: <span id="lives">3</span></span>
+      <span>Best: <span id="best">0</span></span>
+    </div>
+    <button id="fullscreen-btn" title="Fullscreen">⛶</button>
+  </div>
+
+  <!-- Game Canvas -->
+  <canvas id="game" width="480" height="720"></canvas>
+
+  <!-- Corner Controls -->
+  <div id="controls" hidden>
+    <button id="btn-left">◀</button>
+    <button id="btn-right">▶</button>
+  </div>
+
+  <!-- Pause/Game Over Overlay -->
   <div id="overlay" hidden>
     <div class="panel">
       <h2 id="overlay-title">Paused</h2>
